@@ -18,7 +18,7 @@ La seguridad de nuestros usuarios es nuestra máxima prioridad. Si descubre una 
 ### Cómo Reportar
 
 1. **No divulgue públicamente** la vulnerabilidad hasta que hayamos tenido oportunidad de abordarla.
-2. Envíe un reporte detallado a: **security@turedsocial.com**
+2. Envíe un reporte detallado a: **manasesdiaz67@gmail.com**
 3. Incluya en su mensaje:
    - Descripción clara de la vulnerabilidad
    - Pasos para reproducir el problema
