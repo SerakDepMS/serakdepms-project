@@ -3,6 +3,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -13,7 +15,66 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@animations/*": [
+        "src/app/core/animations/*"
+      ],
+      "@enums/*": [
+        "src/app/core/enums/*"
+      ],
+      "@functions/*": [
+        "src/app/core/functions/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@interceptors/*": [
+        "src/app/core/interceptors/*"
+      ],
+      "@interfaces/*": [
+        "src/app/core/interfaces/*"
+      ],
+      "@pipes/*": [
+        "src/app/core/pipes/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@utils/*": [
+        "src/app/core/utils/*"
+      ],      
+      "@features/*": [
+        "src/app/features/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@components/*": [
+        "src/app/shared/components/*"
+      ],
+      "@directives/*": [
+        "src/app/shared/directives/*"
+      ],
+      "@layout/*": [
+        "src/app/shared/layout/*"
+      ],
+      "@ui/*": [
+        "src/app/shared/ui/*"
+      ],
+      "@store/*": [
+        "src/app/store/*"
+      ],
+      "@assets/*": [
+        "public/*"
+      ],
+      "@env": [
+        "src/environments/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

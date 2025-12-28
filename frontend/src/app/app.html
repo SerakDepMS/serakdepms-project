@@ -1,13 +1,17 @@
 <!-- Spinner de Carga -->
-<ngx-spinner bdColor = "rgba(0,0,2,0.8)" size = "medium" color = "#3f51b5" type = "ball-beat" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<ngx-spinner
+  bdColor="rgba(0,0,2,0.8)"
+  size="medium"
+  color="#3f51b5"
+  type="ball-beat"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
 
 <!-- Toast Container para mensajes -->
 <p-toast position="top-right"></p-toast>
 
 <!-- Dialog Container para confirmaciones -->
-<p-confirmDialog 
-  header="Confirmación"
-  icon="pi pi-exclamation-triangle"
-></p-confirmDialog>
+<p-confirmDialog header="Confirmación" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
 <router-outlet />

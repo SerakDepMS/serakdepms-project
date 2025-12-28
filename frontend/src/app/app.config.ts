@@ -1,4 +1,4 @@
-import { ApplicationConfig, isDevMode, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, isDevMode } from '@angular/core';
 import { PreloadAllModules, provideRouter, withComponentInputBinding, withDebugTracing, withPreloading } from '@angular/router';
 import { routes } from './app.routes';
 import Aura from '@primeuix/themes/aura';
@@ -8,18 +8,21 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { provideHttpClient, withFetch, withInterceptors, withJsonpSupport, withXsrfConfiguration } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export const appConfig: ApplicationConfig = {
-  providers: [    
-    provideBrowserGlobalErrorListeners(),
+  providers: [
     provideRouter(routes),
-    // Router con características avanzadas
+    // ============ Ngx Spinner NATIVO DE ANGULAR ============
+    importProvidersFrom(NgxSpinnerModule),
+    // ============ CONFIGURACION ROUTER ============
     provideRouter(
       routes,
       withComponentInputBinding(),
       withPreloading(PreloadAllModules),
       ...(isDevMode() ? [withDebugTracing()] : [])
     ),
+    // ============ PRIME NG CONFIGURACIÓN ============
     providePrimeNG({
       theme: {
           preset: Aura
@@ -33,14 +36,13 @@ export const appConfig: ApplicationConfig = {
         tooltip: 1100 
       }
     }),
-    /** Prime Ng Servicios Útiles */
     MessageService,     
     ConfirmationService,
     DialogService,
     // Animaciones (PrimeNG las necesita)
     provideAnimations(),
     provideAnimationsAsync(),
-    /** Http Client Avanzado */
+    // ============ HTTP CLIENT AVANZADO ============
     provideHttpClient(
       withFetch(),
       withInterceptors([/* tus interceptors */]),
@@ -50,7 +52,7 @@ export const appConfig: ApplicationConfig = {
         headerName: 'X-XSRF-TOKEN'
       })
     ),
-    // Internationalización (i18n)
+    // ============ INTERNACIONALIZACION (i18n) ============
     {
       provide: 'DEFAULT_LANGUAGE',
       useValue: 'es-ES'
