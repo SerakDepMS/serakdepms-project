@@ -68,6 +68,9 @@
       "@store/*": [
         "src/app/store/*"
       ],
+      "@web/*": [
+        "src/app/web/*"
+      ],
       "@assets/*": [
         "public/*"
       ],
