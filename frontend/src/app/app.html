@@ -1,11 +1,9 @@
 <!-- Spinner de Carga -->
 <ngx-spinner
-  bdColor="rgba(0,0,2,0.8)"
-  size="medium"
-  color="#3f51b5"
-  type="ball-beat"
+  bdColor="rgba(255, 255, 255, 0.95)"
+  size="large"
   [fullScreen]="true"
-  ><p style="color: white">Loading...</p></ngx-spinner
+  [template]="spinnerTemplate"
 >
 
 <!-- Toast Container para mensajes -->
